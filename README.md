@@ -4,14 +4,14 @@ Consolidation Challenge
 ****
 
 ## Learning objectives
-***
+****
 
 - Storing data in files
 - Converting complex constructs (array/objects) to string representation.
 - Deliver a project under a strict deadline
 
 ## Our Mission
-*** 
+****
 
 It is time for our first php Consolidation challenge! Let's remember the internet of the 1990, and create a classic widget that every site in that decade had: a _**guestbook**_.
 Any visitor on te page can leave a message on your page that are then saved and showed (last message on top) for everybody who visits the page.
