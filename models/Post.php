@@ -6,41 +6,38 @@ class Post
 {
     // POSTS MUST HAVE THE FOLLOWING ATTRIBUTES
     private string $title;
-    private DateTime $date;
+    private string $date;
     private string $content;
     private string $author;
 
 
-    public function __construct(string $title, string $content, string $author)
+    public function __construct(string $title, string $author, string $content)
     {
         $this->title = $title;
-        $this->date = new DateTime();
         $this->content = $content;
         $this->author = $author;
+        $this->date = Date('Y/m/d H-i-s');
     }
 
-
-    public function getTitle(): string
+    public function getTitle()
     {
         return $this->title;
     }
 
-
-    public function getDate(): string
-    {
-        return $this->date;
-    }
-
-
-    public function getContent(): string
+    public function getContent()
     {
         return $this->content;
     }
 
-
-    public function getAuthor(): string
+    public function getAuthor()
     {
         return $this->author;
     }
+
+    public function getDate()
+    {
+        return $this->date;
+    }
+
 
 }
