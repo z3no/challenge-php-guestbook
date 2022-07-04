@@ -26,7 +26,7 @@ header {
     margin-bottom: 2rem;
 }
 
-main{
+main, section{
     background-color: #22272e;
     border: 1px solid #444c56;
     border-radius: 5px;

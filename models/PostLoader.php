@@ -23,7 +23,7 @@ class PostLoader
     public function getPosts()
     {
         // Get the content of the JSON file and decode it
-        $jsonDecoded = json_decode(file_get_contents('posts.json'));
-        return $jsonDecoded;
+        $reviews = json_decode(file_get_contents('posts.json'));
+        return $reviews;
     }
 }
