@@ -11,6 +11,7 @@ class PostLoader
         $postsData = json_decode($currentPosts, true);
         $newPost = array(
             "title"=>$post->getTitle(),
+            "date"=>$post->getDate(),
             "author"=>$post->getAuthor(),
             "content"=>$post->getContent()
         );
@@ -21,5 +22,8 @@ class PostLoader
 
     public function getPosts()
     {
+        // Get the content of the JSON file and decode it
+        $jsonDecoded = json_decode(file_get_contents('posts.json'));
+        return $jsonDecoded;
     }
 }
