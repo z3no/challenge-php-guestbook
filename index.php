@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // We save our post with help of the saveMyPost function
     $postLoader->saveMyPost($post);
+
+    $reviews = $postLoader->getPosts();
 } else {
     $postLoader = new PostLoader();
     $reviews = $postLoader->getPosts();
@@ -35,6 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php if (count($reviews) <= 20): ?>
             <?php for ($i=0; $i < count($reviews); $i++): ?>
                 <h4><?= $reviews[$i]->{'title'}; ?></h4>
+                <h6><?= $reviews[$i]->{'date'}; ?></h6>
+                <h4><?= $reviews[$i]->{'author'}; ?></h4>
+                <h5><?= $reviews[$i]->{'content'}; ?></h5>
+                <br>
             <?php endfor; ?>
         <?php endif; ?>
     </div>
