@@ -7,15 +7,16 @@ class PostLoader
 
     public function saveMyPost(Post $post)
     {
-        $postData = array(
+        $currentPosts = file_get_contents('posts.json');
+        $postsData = json_decode($currentPosts, true);
+        $newPost = array(
             "title"=>$post->getTitle(),
             "author"=>$post->getAuthor(),
             "content"=>$post->getContent()
         );
-        var_dump($postData);
-        $jsonPostData = json_encode($postData);
-        var_dump($jsonPostData);
-        file_put_contents('posts.json', $jsonPostData);
+        $postsData[] = $newPost;
+        $finalPosts = json_encode($postsData);
+        file_put_contents('posts.json', $finalPosts);
     }
 
     public function getPosts()
